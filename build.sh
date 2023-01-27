@@ -11,13 +11,13 @@ timeStart
 export TZ=Asia/Jakarta
 export BUILD_USERNAME=$BUILD_USERNAME
 export BUILD_HOSTNAME=$BUILD_HOSTNAME
-export TARGET_BOOT_ANIMATION_RES=1080
+export TARGET_BOOT_ANIMATION_RES=720
 lunch banana_ginkgo-userdebug
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
 progress & # Jangan di Hapus
-m banana -j8  > reading #& sleep 95m # Jangan di hapus text line (> reading)
+m banana -j8  > reading & sleep 95m # Jangan di hapus text line (> reading)
 
 retVal=$?
 timeEnd
