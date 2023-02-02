@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/android_manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rexdevz/local_manifest --depth 1 -b banana-13 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/android_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/shinigami46/local_manifest --depth 1 -b banana-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -12,7 +12,7 @@ export TZ=Asia/Jakarta
 export BUILD_USERNAME=$BUILD_USERNAME
 export BUILD_HOSTNAME=$BUILD_HOSTNAME
 export TARGET_BOOT_ANIMATION_RES=720
-lunch banana_ginkgo-userdebug
+lunch banana_whyred-userdebug
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
