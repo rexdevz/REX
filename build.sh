@@ -12,7 +12,7 @@ export TZ=Asia/Jakarta
 export BUILD_USERNAME=$BUILD_USERNAME
 export BUILD_HOSTNAME=$BUILD_HOSTNAME
 export TARGET_BOOT_ANIMATION_RES=720
-lunch banana_ginkgo-userdebug
+lunch banana_ginkgo-user
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
