@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/DotOS/manifest.git -b dot11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rexdevz/local_manifest --depth 1 -b dot-11 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-AOSP/android_manifest.git -b 11 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/rexdevz/local_manifest --depth 1 -b corvus-11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -12,12 +12,12 @@ export TZ=Asia/Jakarta
 export BUILD_USERNAME=$BUILD_USERNAME
 export BUILD_HOSTNAME=$BUILD_HOSTNAME
 export TARGET_BOOT_ANIMATION_RES=720
-lunch dot_ginkgo-userdebug
+lunch corvus_ginkgo-userdebug
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
 progress & # Jangan di Hapus
-make bacon > reading #& sleep 95m # Jangan di hapus text line (> reading)
+make corvus > reading & sleep 95m # Jangan di hapus text line (> reading)
 
 retVal=$?
 timeEnd
