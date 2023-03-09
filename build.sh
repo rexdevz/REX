@@ -10,7 +10,7 @@ timeStart
 source build/envsetup.sh
 export BUILD_USERNAME=$BUILD_USERNAME
 export BUILD_HOSTNAME=$BUILD_HOSTNAME
-lunch lineage_whyred-user
+lunch lineage_whyred-userdebug
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
