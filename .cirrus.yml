@@ -3,7 +3,7 @@ task:
   skip: $CIRRUS_BRANCH == 'master'
   only_if: $CIRRUS_REPO_OWNER == 'rexdevz'
   stateful: true
-  timeout_in: 120m
+  timeout_in: 90m
   container:
     image: rezdevz/ubuntu:latest
     cpu: 8
